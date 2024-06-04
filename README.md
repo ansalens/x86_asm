@@ -28,8 +28,7 @@
 
   * [✓] Install `nasm` ([`nasm.md`](tasks/installation/nasm.md))
 
-  * [✓] Install `ld`, `gcc`, `hexdump`, `objdump` (most Linux distros 
-  already come with this installed)
+  * [✓] Install `ld`, `gcc`, `hexdump`, `objdump` ([tools](tasks/installation/utilities.md))
 
 * [] First program: the `exit` system call ([`first_prog/`](tasks/first_prog))
 
