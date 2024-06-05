@@ -15,6 +15,7 @@
 
 - Learn how to reverse engineer x86 binaries.
   - Learn binary exploitation.
+> https://www.hoppersroppers.org/roadmap/training/pwning.html
 
 
 ## Roadmap
