@@ -2,16 +2,20 @@
 - Now I need to figure out a way to translate those sources to x86 assembly.
 - Googling around, grabbing Intel IA-32 (x86) reference manual, nasm reference manual...
 - Asking chatGPT to translate the x86-64 assembly code to x86.
-Assembly code is in `first.asm`, C code is in `first.c`, assembly files should end with `.asm` extension by convention.
+Assembly code is in `first.asm`, C code is in `first.c`.
+- Assembly files should end with `.asm` extension by convention.
 
-# Compiling C code as 32-bit binary
-- Because x86 is instruction set for __32 bits__, we need to compile C program as 32 bit:
+## Compiling C code as 32-bit binary
+
+- Because x86 is instruction set for __32 bit__, we need to compile C program as 32 bit:
 ```
 $ gcc first.c -o first -m32
 ```
 
-# Turning C code into 32-bit assembly
+## Turning C code into 32-bit assembly
+
 #### Source: https://stackoverflow.com/questions/137038/how-do-you-get-assembler-output-from-c-c-source-in-gcc
+
 - To turn C code into x86 assembly, we can use the following options from `gcc`:
 ```terminal
 $ gcc -c -S first.c
@@ -20,12 +24,12 @@ $ gcc -c -S first.c
 - And `-S` is: stop after compilation stage, output assembly code
 
 
+## Manually building and linking x86 assembly with `nasm` and `ld`
 
-# Manually building and linking x86 assembly with `nasm` and `ld`
 ```terminal
-$ nasm -f elf firstassembly.asm -o firstassembly.o
-$ ld -m elf_i386 firstassembly.o -o firstassembly
-$ ./firstassembly 
+$ nasm -f elf first.asm -o first.o
+$ ld -m elf_i386 first.o -o first
+$ ./first
 $ echo $?
 0
 ```

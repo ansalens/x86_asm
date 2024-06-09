@@ -29,14 +29,14 @@
 
   * [✓] Install `nasm` ([`nasm.md`](tasks/installation/nasm.md))
 
-  * [✓] Install `ld`, `gcc`, `hexdump`, `objdump` ([tools](tasks/installation/utilities.md))
+  * [✓] Install `ld`, `gcc`, `hexdump`, `objdump` ([`tools`](tasks/installation/utilities.md))
 
-* [] First program: the `exit` system call ([`first_prog/`](tasks/first_prog))
+* [✓] First program: the `exit` system call ([`first_prog/`](tasks/first_prog))
 
-  * [] Write, assemble and run a program that "does nothing", and check 
+  * [✓] Write, assemble and run a program that "does nothing", and check 
   the return value ([`build.md`](tasks/first_prog/build.md))
 
-  * [] Try to exit with various exit codes 
+  * [✓] Try to exit with various exit codes 
   ([`exit8.asm`](tasks/first_prog/exit8.asm) and
   [`exit256.asm`](tasks/first_prog/exit256.asm))
 
