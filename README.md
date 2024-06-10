@@ -40,7 +40,7 @@
   ([`exit8.asm`](tasks/first_prog/exit8.asm) and
   [`exit256.asm`](tasks/first_prog/exit256.asm))
 
-* [] Make a "hello world" program
+* [✓] Make a [`hello world`](tasks/helloworld/hello.asm) program
 
 * [] Call assembly functions from C ([`call_from_c`](tasks/call_from_c/run.md))
 

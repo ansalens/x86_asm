@@ -28,6 +28,7 @@ Get some background info on stack and heap, some instructions and some registers
 
 - General purpose: __eax, ebx, ecx, edx, esi, edi__
 - Special purpose: __ebp, esp, eip__
+![x86registers](scrs/registers.png)
 
 # Stack
 
