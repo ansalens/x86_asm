@@ -18,6 +18,7 @@ _start:
 	int 0x80		; invoke syscall
 
 
-	section .data:				; data segment
+
+section .data:					; data segment
 	helloStr: db "Hello, world!", 0xA	; add string + \n
 	len: equ $ -helloStr			; gets length of string
