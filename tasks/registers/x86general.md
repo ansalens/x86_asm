@@ -22,13 +22,19 @@ Get some background info on stack and heap, some instructions and some registers
 
 - Small variables that live in CPU.
 - Extremely fast.
-- Store values or memroy addresses.
+- Store values or memory addresses.
 
 ### x86 registers
 
+- x86 assembly allows 32 bits of information to be stored in each register.
 - General purpose: __eax, ebx, ecx, edx, esi, edi__
 - Special purpose: __ebp, esp, eip__
-![x86registers](scrs/registers.png)
+
+![x86registers](../../res/scr/registers.png)
+
+- x86 registers are backwards compatible with 16 bit registers.
+- That is why we can access __16 bit__ parts of our registers, so to access the 16 bit part of __EAX__ you will type __AX__, for EBX you type BX...
+- Similar thing for the 8 bit registers, because 16 bit registers are also divided on two 8 bit registers for __AX__ that is: __AL__ the lower 8 bits register, __AH__ the higher 8 bits register.
 
 # Stack
 

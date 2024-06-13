@@ -56,12 +56,12 @@
 
 * Registers ([`registers`](tasks/registers))
 
-  * [] Register names and sizes ([theory](tasks/registers/theory.md))
+  * [✓] Register names and sizes ([theory](tasks/registers/x86general.md))
 
   * The `mov` instruction
 
-  * [] Write a program that moves values between registers of different sizes
-  ([run](tasks/registers/run.md))
+  * [✓] Write a program that moves values between registers of different sizes
+  ([run](tasks/registers/notes.md))
 
   * The `xchg` instruction
 
