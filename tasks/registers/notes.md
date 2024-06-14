@@ -54,4 +54,17 @@ HEX: 77359407
 BIN: 01110111 00110101 10010100 00000111
 ```
 
-- We can see that we have achieved a similar effect to simple addition.
+- ~We can see that we have achieved a similar effect to simple addition.~
+
+__NOTICE__ that in this example 2 billion has all 0 bits set in last byte, which means setting any of those bits would achieve simple addition mentioned above.
+- But, setting the lower 8 bits using __AL__ portion of __EAX__ register, will have the same behavior as seen above. It will *zero out* that last byte and add the number that was moved into __AL__, as for our case, it was 7 (111).
+- Instead it's more easier to look at this example, where we move `1970000123` in __EAX__, but also move 7 into __AL__, which in turn when called from our C program looks like this:
+
+```sh
+$ ./bin/reg3 
+DEC: 1969999879
+HEX: 756bd007
+BIN: 01110101 01101011 11010000 00000111
+```
+
+- Here the effect is plain simple to see, it zeroed out first byte, before moving 7 (111) into it.
