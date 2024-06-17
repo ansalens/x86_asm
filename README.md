@@ -61,16 +61,16 @@
   * The `mov` instruction
 
   * [✓] Write a program that moves values between registers of different sizes
-  ([run](tasks/registers/notes.md))
+  ([notes](tasks/registers/notes.md))
 
   * The `xchg` instruction
 
-* [] Look into machine code 
-  ([`inspect_binary/howto.md`](tasks/inspect_binary/howto.md))
+* [✓] Look into machine code 
+  ([`bin_inspection/howto.md`](tasks/bin_inspection/howto.md))
 
-  * [] Check out the machine code of a program with `hexdump`
+  * [✓] Check out the machine code of a program with `hexdump`
 
-  * [] Disassemble a program with `objdump`
+  * [✓] Disassemble a program with `objdump`
 
 * [] Basic Arithmetic ([`arithmetic/run.md`](tasks/arithmetic/run.md))
 
@@ -79,7 +79,7 @@
 
   * [] Make a program that subtracts two numbers
   ([`sub.asm`](tasks/arithmetic/sub.asm))
-  
+ 
   * [] Make a program that uses increment
   ([`inc.asm`](tasks/arithmetic/inc.asm))
 
@@ -88,7 +88,7 @@
 
   * [] Make a program that uses unsigned integer multiplication
   ([`mul.asm`](tasks/arithmetic/mul.asm))
-  
+ 
   * [] Make a program that uses signed integer multiplication
   ([`imul.asm`](tasks/arithmetic/imul.asm))
 
@@ -118,7 +118,7 @@
 * Logical and Bitwise Operations ([`logical`](tasks/logical))
 
   * [] Use AND and OR ([`and_or.asm`](tasks/logical/and_or.asm))
-  
+ 
   * [] Use NOT and XOR ([`not_xor.asm`](tasks/logical/not_xor.asm))
 
   * [] Shift and Rotate operations ([`shift.asm`](tasks/logical/shift.asm))
@@ -206,7 +206,7 @@
 
   * [] Write a program with division operations
   ([`idiv.asm`](tasks/arith2/idiv.asm))
-  
+ 
   * [] Write a program that does proper signed divisions with sign extensions
   ([`sx.asm`](tasks/arith2/sx.asm))
 

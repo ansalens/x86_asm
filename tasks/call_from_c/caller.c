@@ -8,7 +8,7 @@ int main() {
   /* Note that we store result as UNSIGNED integer */
   uint32_t result = asm_func();
 
-  printf("SGN: %" PRId32 "\n", (uint32_t) result);
+  // printf("SGN: %" PRId32 "\n", (uint32_t) result);
   printf("DEC: %" PRIu32 "\n", result);
   printf("HEX: %" PRIx32 "\n", result);
   printf("BIN: ");
