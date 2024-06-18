@@ -72,27 +72,27 @@
 
   * [✓] Disassemble a program with `objdump`
 
-* [] Basic Arithmetic ([`arithmetic/run.md`](tasks/arithmetic/run.md))
+* [✓] Basic Arithmetic ([`arithmetic/run.md`](tasks/arithmetic/run.md))
 
-  * [] Make a program that sums two numbers 
+  * [✓] Make a program that sums two numbers 
   ([`add.asm`](tasks/arithmetic/add.asm))
 
-  * [] Make a program that subtracts two numbers
+  * [✓] Make a program that subtracts two numbers
   ([`sub.asm`](tasks/arithmetic/sub.asm))
  
-  * [] Make a program that uses increment
+  * [✓] Make a program that uses increment
   ([`inc.asm`](tasks/arithmetic/inc.asm))
 
-  * [] Make a program that uses decrement
+  * [✓] Make a program that uses decrement
   ([`dec.asm`](tasks/arithmetic/dec.asm))
 
-  * [] Make a program that uses unsigned integer multiplication
+  * [✓] Make a program that uses unsigned integer multiplication
   ([`mul.asm`](tasks/arithmetic/mul.asm))
  
-  * [] Make a program that uses signed integer multiplication
+  * [✓] Make a program that uses signed integer multiplication
   ([`imul.asm`](tasks/arithmetic/imul.asm))
 
-  * [] Make a program that obtains the negative of a number
+  * [✓] Make a program that obtains the negative of a number
   ([`neg.asm`](tasks/arithmetic/neg.asm))
 
 * [] Labels and Unconditional Jumps ([`jump`](tasks/jump))

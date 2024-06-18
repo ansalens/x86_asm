@@ -1,3 +1,4 @@
+; Program that shows simple subtraction with SUB instruction using different registers
 section .text
 	global asm_func
 
