@@ -49,7 +49,7 @@ $ find / -name unistd_32.h 2>/dev/null
 - Looking a `man 2 write` we can figure out what `write` syscall needs.
 - Value in __ebx__ is first argument, which is file descriptor to write to.
 - Value in __ecx__ is second argument, which is the location of our string in memory.
-- Value moved into __edx__ is string's length which is third argument.
+- Value moved into __edx__ is string's length which is third argument (len).
 - Changing it's value to something bigger outputs our string and some junk data:
 ```shell
 Hello, world
@@ -60,13 +60,14 @@ Hello, world
 ## .data segment
 
 ```asm
-section .data:			; data segment
+section .data:			                ; data segment
 	helloStr: db "Hello, world", 0xA	; add string + \n
+    len equ $ -helloStr                 ; gets length of a string
 ```
 
 - `helloStr` defines a label for memory address at which our string will live.
 - `db` means `define byte`
-- `0xA` means 10 in decimal which is ASCII for '\n' newline char.
+- `0xA` means 10 in decimal which is ASCII for newline char.
 - The comma between the string and newline character will just __concatenate__ the two.
 
 
@@ -91,5 +92,6 @@ user    0m0.000s
 sys     0m0.002s
 ```
 
-- Conclusion is simple, __assembly language is faster than C!__
-- Or is it?
+- __This assembly program is faster than C version of the same program!__
+- In reality speed comparison between the two is much more complicated.
+- It boils down to, code optimizations in both languages.

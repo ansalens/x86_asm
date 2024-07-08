@@ -3,7 +3,8 @@ section .text
 	global asm_func
 
 asm_func:
-	mov eax, 3
+	; mov eax, 3
+	mov al, 3
 	mov edx, 5
 	imul edx	; multiply EAX with EDX and store in EAX
 

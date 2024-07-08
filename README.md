@@ -2,26 +2,26 @@
 
 ## Context
 
-- These are my notes and source code for x86 assembly. This is my understanding of it.
-- Original roadmap is this:
-> https://github.com/yds12/x64-roadmap
+- These are my notes and sources for x86 assembly. This is my understanding of it.
+- Original roadmap is:
+    > https://github.com/yds12/x64-roadmap
 
 
 ## Learning goals
 
 - Learn to write x86 assembly.
 - Learn to read x86 assembly.
-- Write/debug my own compiler.
-
-- Learn how to reverse engineer x86 binaries.
+- Learn x86 reverse engineering.
   - Learn binary exploitation.
 > https://www.hoppersroppers.org/roadmap/training/pwning.html
 
 
 ## Roadmap
 
-- I will structure my learning plan as follows, and leave a check ( ✓ ) when I'm done with the topic.
-- At some point, I will get bored of it, which means I will switch to another resource (https://github.com/hoppersroppers/nightmare/blob/master/modules/01-intro_assembly/readme.md) and make some notes from there and switch back and forth...
+- I will structure my learning plan as follows.
+- I will leave a check mark ( ✓ ) when I'm done with the topic.
+- At some point, I will get bored, which means I will switch to another resource (https://github.com/hoppersroppers/nightmare/blob/master/modules/01-intro_assembly/readme.md) and make some notes from there and switch back and forth.
+
 
 ### The Basics
 

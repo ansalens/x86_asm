@@ -2,7 +2,6 @@
 section .text
 	global asm_func
 
-
 asm_func:
 	mov eax, 6
 	add eax, 1

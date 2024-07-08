@@ -1,7 +1,7 @@
 ## `reg1.asm`
 
 - This program shows how moving data around registers works.
-- At the end, 10 will be in __EBX__ register, and we call exit with that number 10.
+- At the end, 10 will be in __EBX__ register, and we exit with 10.
 ```sh
 $ nasm -f elf reg1.asm -o bin/object1.o
 $ ld -m elf_i386 bin/object1.o -o bin/reg1

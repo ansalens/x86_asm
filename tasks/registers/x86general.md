@@ -27,8 +27,8 @@ Get some background info on stack and heap, some instructions and some registers
 ### x86 registers
 
 - x86 assembly allows 32 bits of information to be stored in each register.
-- General purpose: __eax, ebx, ecx, edx, esi, edi__
-- Special purpose: __ebp, esp, eip__
+- General purpose: __EAX, EBX, ECX, EDX, ESI, EDI__
+- Special purpose: __EBP, ESP, EIP__
 
 ![x86registers](../../res/scr/registers.png)
 

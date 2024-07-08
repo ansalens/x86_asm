@@ -21,7 +21,7 @@ $ hexdump bin/first
 -- snip --
 ```
 
-- First number is an offset (from the beginning of a file), after that all instructions are in hex format.
+- First number is an __offset__ (from the beginning of a file), after that all instructions are in hex format.
 - Each char is 4 bits, each group of 4 char is 2 bytes (2 * 8)
 
 ## `objdump`

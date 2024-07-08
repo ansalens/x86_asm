@@ -3,5 +3,5 @@ section .text
 
 asm_func:
 	mov ebx, -10
-	imul eax, ebx, -5
+	imul eax, eax, -5
 	ret

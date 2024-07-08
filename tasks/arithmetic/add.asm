@@ -1,6 +1,5 @@
 ; This program does simple addition of hard coded integers
 ; It should be compiled with caller.c
-
 section .text
 	global asm_func
 
