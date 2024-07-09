@@ -35,6 +35,15 @@ Get some background info on stack and heap, some instructions and some registers
 - x86 registers are backwards compatible with 16 bit registers.
 - That is why we can access __16 bit__ parts of our registers, so to access the 16 bit part of __EAX__ you will type __AX__, for EBX you type BX...
 - Similar thing for the 8 bit registers, because 16 bit registers are also divided on two 8 bit registers for __AX__ that is: __AL__ the lower 8 bits register, __AH__ the higher 8 bits register.
+- Purpose:
+1. __EAX__ is called Accumulator register
+    - Used for I/O, arithmetic, interrupt calls
+2. __EBX__ is called Base register
+    - Used as a base pointer for memory access
+3. __ECX__ is called Counter register
+    - Used for loops and shifts
+4. __EDX__ is called Data register
+    - Used for I/O access, arithmetic, some interrupt calls.
 
 # Stack
 

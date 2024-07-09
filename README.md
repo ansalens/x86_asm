@@ -100,18 +100,18 @@
   * [✓] Write a program with a `jmp` instruction
   ([`jump.asm`](tasks/jump/jump.asm) and [`labels.asm`](tasks/jump/labels.asm))
 
-* [] Flags, Comparisons and Conditional Jumps 
-  ([`flags/theory.md`](tasks/flags/theory.md))
+* [✓] Flags, Comparisons and Conditional Jumps 
+  ([`flags/theory.md`](tasks/flags/control_flow.md))
 
-  * [] Write a program with a conditional jump 
+  * [✓] Write a program with a conditional jump 
   ([`cond_jump.asm`](tasks/flags/cond_jump.asm))
 
-  * [] Write a program with a loop ([`loop.asm`](tasks/flags/loop.asm))
+  * [✓] Write a program with a loop ([`loop.asm`](tasks/flags/loop.asm))
 
-  * [] Write a program using the overflow flag
+  * [✓] Write a program using the overflow flag
   ([`overflow.asm`](tasks/flags/overflow.asm))
 
-  * [] Write a program contrasting the above and below comparisons with the
+  * [✓] Write a program contrasting the above and below comparisons with the
   greater than and less than comparisons
   ([`above_below.asm`](tasks/flags/above_below.asm))
 
