@@ -7,7 +7,7 @@ asm_func:
 	mov al, -1
 	mov dh, 1
 	cmp al, dh
-	jg is_more  ; jump if AL > DH
+	jg is_more	; jump if AL > DH
 	jl is_less	; jump if AL < DH
 
 	mov eax, 0

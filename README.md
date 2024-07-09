@@ -101,7 +101,7 @@
   ([`jump.asm`](tasks/jump/jump.asm) and [`labels.asm`](tasks/jump/labels.asm))
 
 * [✓] Flags, Comparisons and Conditional Jumps 
-  ([`flags/theory.md`](tasks/flags/control_flow.md))
+  ([`flags/control_flow.md`](tasks/flags/control_flow.md))
 
   * [✓] Write a program with a conditional jump 
   ([`cond_jump.asm`](tasks/flags/cond_jump.asm))
