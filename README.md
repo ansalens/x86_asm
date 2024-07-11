@@ -1,4 +1,4 @@
-# x86 assembly
+# x86 Assembly
 
 ## Context
 
@@ -20,7 +20,8 @@
 
 - I will structure my learning plan as follows.
 - I will leave a check mark ( ✓ ) when I'm done with the topic.
-- At some point, I will get bored, which means I will switch to another resource (https://github.com/hoppersroppers/nightmare/blob/master/modules/01-intro_assembly/readme.md) and make some notes from there and switch back and forth.
+- At some point in time I will also start studying the following:
+> https://github.com/hoppersroppers/nightmare/blob/master/modules/01-intro_assembly/readme.md) 
 
 
 ### The Basics
@@ -42,7 +43,7 @@
 
 * [✓] Make a [`hello world`](tasks/helloworld/hello.asm) program
 
-* [✓] Call assembly functions from C ([`call_from_c`](tasks/call_from_c/notes.md))
+* [✓] Call assembly functions from C ([`tasks/call_from_c/Calling_from_c.md`](tasks/call_from_c/Calling_from_c.md))
 
   * [✓] Write an assembly program with a callable function that returns a
   32-bit integer ([`ret_int.asm`](tasks/call_from_c/ret_int.asm))
@@ -56,12 +57,12 @@
 
 * Registers ([`registers`](tasks/registers))
 
-  * [✓] Register names and sizes ([theory](tasks/registers/x86general.md))
+  * [✓] Register names and sizes ([`x86general.md`](tasks/registers/x86general.md))
 
   * The `mov` instruction
 
   * [✓] Write a program that moves values between registers of different sizes
-  ([notes](tasks/registers/notes.md))
+  ([notes](tasks/registers/registers.md))
 
   * The `xchg` instruction
 
@@ -72,7 +73,7 @@
 
   * [✓] Disassemble a program with `objdump`
 
-* [✓] Basic Arithmetic ([`arithmetic/run.md`](tasks/arithmetic/run.md))
+* [✓] Basic Arithmetic ([`arithmetic/arithmetics.md`](tasks/arithmetic/arithmetics.md))
 
   * [✓] Make a program that sums two numbers 
   ([`add.asm`](tasks/arithmetic/add.asm))
@@ -95,13 +96,13 @@
   * [✓] Make a program that obtains the negative of a number
   ([`neg.asm`](tasks/arithmetic/neg.asm))
 
-* [✓] Labels and Unconditional Jumps ([`jump`](tasks/jump))
+* [✓] Labels and Unconditional Jumps ([`tasks/jump/unconditional_jumps.md`](tasks/jump/unconditional_jumps.md))
 
   * [✓] Write a program with a `jmp` instruction
   ([`jump.asm`](tasks/jump/jump.asm) and [`labels.asm`](tasks/jump/labels.asm))
 
 * [✓] Flags, Comparisons and Conditional Jumps 
-  ([`flags/control_flow.md`](tasks/flags/control_flow.md))
+  ([`tasks/flags/control_flow.md`](tasks/flags/control_flow.md))
 
   * [✓] Write a program with a conditional jump 
   ([`cond_jump.asm`](tasks/flags/cond_jump.asm))
@@ -115,13 +116,13 @@
   greater than and less than comparisons
   ([`above_below.asm`](tasks/flags/above_below.asm))
 
-* Logical and Bitwise Operations ([`logical`](tasks/logical))
+* Logical and Bitwise Operations ([`logic/logic.md`](tasks/logic/logic.md))
 
-  * [] Use AND and OR ([`and_or.asm`](tasks/logical/and_or.asm))
+  * [] Use AND and OR ([`and_or.asm`](tasks/logic/and_or.asm))
  
-  * [] Use NOT and XOR ([`not_xor.asm`](tasks/logical/not_xor.asm))
+  * [] Use NOT and XOR ([`not_xor.asm`](tasks/logic/not_xor.asm))
 
-  * [] Shift and Rotate operations ([`shift.asm`](tasks/logical/shift.asm))
+  * [] Shift and Rotate operations ([`shift.asm`](tasks/logic/shift.asm))
 
 * [] Data Types, Memory Addressing and the `.data` Section
   ([`data/run.md`](tasks/data/run.md))
