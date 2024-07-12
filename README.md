@@ -62,7 +62,7 @@
   * The `mov` instruction
 
   * [✓] Write a program that moves values between registers of different sizes
-  ([notes](tasks/registers/registers.md))
+  ([`registers.md`](tasks/registers/registers.md))
 
   * The `xchg` instruction
 
@@ -118,22 +118,22 @@
 
 * Logical and Bitwise Operations ([`logic/logic.md`](tasks/logic/logic.md))
 
-  * [] Use AND and OR ([`and_or.asm`](tasks/logic/and_or.asm))
+  * [✓] Use AND and OR ([`and_or.asm`](tasks/logic/and_or.asm))
  
-  * [] Use NOT and XOR ([`not_xor.asm`](tasks/logic/not_xor.asm))
+  * [✓] Use NOT and XOR ([`not_xor.asm`](tasks/logic/not_xor.asm))
 
-  * [] Shift and Rotate operations ([`shift.asm`](tasks/logic/shift.asm))
+  * [✓] Shift and Rotate operations ([`shift.asm`](tasks/logic/shift.asm))
 
 * [] Data Types, Memory Addressing and the `.data` Section
   ([`data/run.md`](tasks/data/run.md))
 
-  * [] How memory works in Linux?
-  ([`theory.md`](tasks/data/theory.md))
+  * [✓] How memory works in Linux?
+  ([`linux_memory.md`](tasks/data/linux_memory.md))
 
-  * [] Write a program that uses the `.data` section
+  * [✓] Write a program that uses the `.data` section
   ([`print_data.asm`](tasks/data/print_data.asm))
  
-  * [] Write a program that uses different data types
+  * [✓] Write a program that uses different data types
   ([`types.asm`](tasks/data/types.asm))
 
   * [] Write a program that uses addressing with displacement
