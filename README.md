@@ -21,7 +21,7 @@
 - I will structure my learning plan as follows.
 - I will leave a check mark ( ✓ ) when I'm done with the topic.
 - At some point in time I will also start studying the following:
-> https://github.com/hoppersroppers/nightmare/blob/master/modules/01-intro_assembly/readme.md) 
+> https://github.com/hoppersroppers/nightmare/blob/master/modules/01-intro_assembly/readme.md
 
 
 ### The Basics
