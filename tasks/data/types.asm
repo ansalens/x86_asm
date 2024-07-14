@@ -19,7 +19,7 @@ asm_func:
     mov ecx, [rel one_dword]
     add eax, edx
 
-    xor eax, eax        ; must xor because it will overflow
+    xor eax, eax        ; must reset to 0, because it will overflow
     add eax, ecx
     ret
 

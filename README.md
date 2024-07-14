@@ -125,7 +125,7 @@
   * [✓] Shift and Rotate operations ([`shift.asm`](tasks/logic/shift.asm))
 
 * [] Data Types, Memory Addressing and the `.data` Section
-  ([`data/run.md`](tasks/data/run.md))
+  ([`data/build.md`](tasks/data/build.md))
 
   * [✓] How memory works in Linux?
   ([`linux_memory.md`](tasks/data/linux_memory.md))
@@ -136,7 +136,7 @@
   * [✓] Write a program that uses different data types
   ([`types.asm`](tasks/data/types.asm))
 
-  * [] Write a program that uses addressing with displacement
+  * [✓] Write a program that uses addressing with displacement
   ([`ret4bytes.asm`](tasks/data/ret4bytes.asm))
 
   * [] Write a program using addressing with a base register,

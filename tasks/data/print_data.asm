@@ -9,7 +9,7 @@ SYSCALL_EXIT equ 1
 STDOUT equ 1
 
 section .data
-    bytes: db 'O', 'K', 10          ; 'OK\n'
+    bytes: db 'O', 'K', 10          ; 'OK\n' is this an char array?
     LEN equ $ - bytes               ; get length of label 'bytes' 
 
 

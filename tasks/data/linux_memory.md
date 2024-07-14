@@ -44,7 +44,7 @@
 - It's not anonymous, because it's mappings are __private__.
 - Which means updating it won't change the underlying file.
     - If it would change the underlying file it would overwrite the actual on-disk binary image.
-- Data section will store all those variables in executable, unlike __assembly directives__ which are not.
+- Data section will store all those variables in executable, unlike __assembly directives__ which are not stored at all.
 - Text memory section stores all string literals and program's code.
 
 ![segments](scrs/segments.png)
@@ -53,9 +53,11 @@
 
 - *Notice:* data segment means data + bss + heap.
 
+# How the kernel manages memory
 
 
 ---
 
-Source: https://web.archive.org/web/20240425201419/https://manybutfinite.com/post/anatomy-of-a-program-in-memory/
-
+Sources: 
+1. https://web.archive.org/web/20240425201419/https://manybutfinite.com/post/anatomy-of-a-program-in-memory/
+2. https://web.archive.org/web/20240425203544/https://manybutfinite.com/post/how-the-kernel-manages-your-memory
