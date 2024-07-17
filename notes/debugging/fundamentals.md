@@ -7,6 +7,11 @@ $ gdb faulty.c -o faulty -m32 -g
 ```
 
 - Next to begin debugging in GDB, `gdb ./faulty`
+- To run a program (with arguments) as you would normally:
+
+```sh
+(gdb) r arg1 arg2
+```
 
 ## Disassembling functions
 
@@ -54,14 +59,31 @@ Breakpoint 1 at 0x11f4: file ../tasks/call_from_c/caller.c, line 15
 ```
 
 - Notice the `*` in front of an address, it's telling the GDB to make a breakpoint at the line stored in that memory address.
-
-- Deleting a breakpoint:
+- Setting a temporary breakpoint:
 
 ```sh
-(gdb) info break
+(gdb) tb *main
+Temporary breakpoint 3 at 0x5655618d: file ../tasks/call_from_c/caller.c, line 7.
+```
+
+- You can delete a breakpoint/s in multiple ways:
+
+```sh
+(gdb) info breakpoints
 Num     Type           Disp Enb Address    What
-1       breakpoint     keep y   0x000011f4
-(gdb) del 1
+3       breakpoint     del  y   0x5655618d in main at ../tasks/call_from_c/caller.c:7
+4       breakpoint     keep y   0x56556197 in main at ../tasks/call_from_c/caller.c:7
+5       breakpoint     keep y   0x565561a1 in main at ../tasks/call_from_c/caller.c:7
+(gdb) del 3-4 # deletes breakpoints rannging from 3 to 4
+(gdb) del 5   # deletes breakpoint number 5
+(gdb) info breakpoints
+No breakpoints or watchpoints.
+```
+
+- You can enable or disable a certain breakpoint or a range of breakpoints:
+
+```sh
+(gdb) disable 1-3   # disables breakpoints ranging from 1 to 3
 ```
 
 - From here we can step one line in the code with `stepi`:
@@ -77,6 +99,11 @@ Num     Type           Disp Enb Address    What
 (gdb) ni
 (gdb) finish
 ```
+
+- You can continue program execution until next breakpoint with `(gdb) c`.
+- Or you can ignore the breakpoint N number of times (good for loops): `(gdb) c <N>`
+- Or you can continue until you encounter a certain line,function,address:
+`(gdb) until <line/function/address>`
 
 ### Data breakpoints
 
@@ -100,10 +127,39 @@ Hardware watchpoint 2: result
 - To view info about registers or about shared libraries:
 
 ```sh
-(gdb) info registers
-(gdb) x/i $pc
+(gdb) info r
 (gdb) info shared
 ```
+
+- To print contents of a variable:
+```sh
+(gdb) x/i $pc
+```
+
+- `x/<N><F><U> memory_address`, where:
+1. N is number of times
+2. F is a format
+    - x for hex
+    - d for dec
+    - i for instruction....
+3. U is unit
+    - b for byte
+    - h for half word...
+
+- Consider the example:
+
+```sh
+(gdb) x/10i $pc
+```
+
+- Which prints `10` next instructions (including the current one) from program counter (EIP).
+- Or this one:
+
+```sh
+(gdb) x/10i 0x56556194
+```
+
+- Which prints 10 instructions starting from a memory address.
 
 - View stack trace:
 

@@ -1,6 +1,6 @@
-; This program shows how to access an array of bytes withing a memory
-; using a displacement method, in other words we will be adding 1
-; to increment the index of an array.
+; This program shows how to access an array of bytes within a memory
+; using a displacement method. In other words we will be accessing
+; our array with index value which we will increment accordingly.
 
 section .data
     bytes_var db 0xA, 0x0b, 0ch, 0xD    ; define byte array of hex values (10,11,12,13)

@@ -1,5 +1,6 @@
 ; This program shows different data types at play
 
+; data will hold initialized static global variables
 section .data:
     one_byte: db 255                ; this is a static byte variable with contents of 255
     one_word: dw 65535
@@ -9,17 +10,15 @@ section .text
     global asm_func
 
 asm_func:
-    ; initialize these registers with 0
     xor eax, eax
     xor edx, edx
     xor ecx, ecx
 
-    mov al, [rel one_byte]
-    mov dx, [rel one_word]
-    mov ecx, [rel one_dword]
-    add eax, edx
+    mov al, [one_byte]
+    mov dx, [one_word]
+    mov ecx, [one_dword]
+    add eax, edx                    ; 65535+255
 
-    xor eax, eax        ; must reset to 0, because it will overflow
-    add eax, ecx
+    xor eax, eax                    ; must be set to 0, otherwise it will overflow
+    add eax, ecx                    ; EAX has maximum 32bit value
     ret
-

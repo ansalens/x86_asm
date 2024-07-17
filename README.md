@@ -116,7 +116,7 @@
   greater than and less than comparisons
   ([`above_below.asm`](tasks/flags/above_below.asm))
 
-* Logical and Bitwise Operations ([`logic/logic.md`](tasks/logic/logic.md))
+* [✓] Logical and Bitwise Operations ([`logic/logic.md`](tasks/logic/logic.md))
 
   * [✓] Use AND and OR ([`and_or.asm`](tasks/logic/and_or.asm))
  
@@ -124,7 +124,7 @@
 
   * [✓] Shift and Rotate operations ([`shift.asm`](tasks/logic/shift.asm))
 
-* [] Data Types, Memory Addressing and the `.data` Section
+* [✓] Data Types, Memory Addressing and the `.data` Section
   ([`data/build.md`](tasks/data/build.md))
 
   * [✓] How memory works in Linux?
@@ -139,20 +139,20 @@
   * [✓] Write a program that uses addressing with displacement
   ([`ret4bytes.asm`](tasks/data/ret4bytes.asm))
 
-  * [] Write a program using addressing with a base register,
+  * [✓] Write a program using addressing with a base register,
   an index register and scale factor
   ([`ret_words.asm`](tasks/data/ret_words.asm))
 
-  * [] Write a program using the `.bss` section
+  * [✓] Write a program using the `.bss` section
   ([`bss.asm`](tasks/data/bss.asm))
 
-  * [] Write a program that uses a "global variable" from the `.bss` section
+  * [✓] Write a program that uses a "global variable" from the `.bss` section
   ([`var_bss.asm`](tasks/data/var_bss.asm))
 
-  * [] Write a program that increments a "global variable" from the 
+  * [✓] Write a program that increments a "global variable" from the 
   `.bss` section ([`inc_var.asm`](tasks/data/inc_var.asm))
 
-  * [] Write a program that manipulates an array
+  * [✓] Write a program that manipulates an array
   ([`array.asm`](tasks/data/array.asm))
 
 * [] The Stack ([`stack/theory.md`](tasks/stack/theory.md))
