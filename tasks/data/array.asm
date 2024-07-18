@@ -40,12 +40,12 @@ sum:
     mov ebx, 1
     mov edx, 3
 
-display:
-    mov dword ecx, esi
-    int 0x80
+;display:
+    ;mov dword ecx, esi
+    ;int 0x80
 
-    inc edi
-    cmp edi, LEN-1
-    jnz display
+    ;inc edi
+    ;cmp edi, LEN-1
+    ;jnz display
 
-    ret
+    ;ret

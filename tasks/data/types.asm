@@ -1,6 +1,6 @@
 ; This program shows different data types at play
 
-; data will hold initialized static global variables
+; section .data will hold initialized static global variables
 section .data:
     one_byte: db 255                ; this is a static byte variable with contents of 255
     one_word: dw 65535

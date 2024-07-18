@@ -183,8 +183,16 @@ Hardware watchpoint 2: result
 
 - This displays three instructions inside `$pc` program counter on every step/breakpoint.
 
+- Show and delete display expressions:
+
+```sh
+(gdb) info display
+(gdb) delete display <N>
+```
+
 ---
 
 Sources:
 - https://mohit.io/blog/gdb-assembly-language-debugging-101/
 - https://mohit.io/blog/gdb-debugging-in-assembly/
+- https://www.cse.unsw.edu.au/~learn/debugging/modules/gdb_watch_display/

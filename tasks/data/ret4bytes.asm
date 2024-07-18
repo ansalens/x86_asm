@@ -3,7 +3,7 @@
 ; our array with index value which we will increment accordingly.
 
 section .data
-    bytes_var db 0xA, 0x0b, 0ch, 0xD    ; define byte array of hex values (10,11,12,13)
+    bytes_var db 0xA, 0x0b, 0ch, 0xD    ; define byte array 
 
 section .text
     global asm_func

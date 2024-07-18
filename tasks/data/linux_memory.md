@@ -18,7 +18,8 @@
 - For every process the offset to particular memory segments such as the stack, memory mapping segment, and the heap is __random__.
 - This is safety mechanism, and it's called __Address Space Layout Randomization (ASLR)__.
 - *Notice:* ASLR on 32-bit machines is tight, leaving little space for randomization.
-- It's interesting to also note, that the stack expands if possible and needed (__expand_stack()__). If it's not possible to expand stack, then __stack overflow__ happens.
+- It's interesting to also note, that the stack expands if possible and needed (__expand_stack()__).
+- If it's not possible to expand stack, then __stack overflow__ happens.
     - When it does happen, we get __segmentation fault__ error and our program crashes.
 - Access to unmapped memory region (except for stack) results in segfault.
 - Write attempts to read only segments also results in segfault.
@@ -46,14 +47,11 @@
     - If it would change the underlying file it would overwrite the actual on-disk binary image.
 - Data section will store all those variables in executable, unlike __assembly directives__ which are not stored at all.
 - Text memory section stores all string literals and program's code.
+- *Notice:* data segment means data + bss + heap.
 
 ![segments](scrs/segments.png)
 
 
-
-- *Notice:* data segment means data + bss + heap.
-
-# How the kernel manages memory
 
 
 ---

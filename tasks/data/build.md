@@ -91,15 +91,15 @@ mov bx, word_value      ; operand from memory is added to a register
 ```
 
 #### Direct-offset addressing
-- Used for accessing data from tables
+- Used for accessing data from arrays.
 
 ```asm
-byte_table db 14, 9, 43, 23
-word_table dw 290, 257, 350, 950
+byte_array db 14, 9, 43, 23
+word_array dw 290, 257, 350, 950
 
-mov cl, byte_table[2]       ; third element
-mov cl, byte_table + 2      ; third element
-mov cx, word_table[3]       ; fourth element
+mov cl, byte_array[2]       ; third element
+mov cl, byte_array + 2      ; third element
+mov cx, word_array[3]       ; fourth element
 ```
 
 4. Indirect Memory Addressing (IMA)
@@ -108,8 +108,8 @@ mov cx, word_table[3]       ; fourth element
     - In previous example, it's `dword` and not a `word` because EAX is `dword`.
 
 ```asm
-my_table times 10 dw 0      ; allocates 10 words and initializes them to 0
-mov ebx, [my_table]         ; EBX points to first element of an array
+my_array times 10 dw 0      ; allocates 10 words and initializes them to 0
+mov ebx, [my_array]         ; EBX points to first element of an array
 mov [ebx], 110              ; moves 110 to the first element of an array
 add ebx, 2                  ; adds 2 bytes, meaning next element of an array
 mov [ebx], 123
@@ -202,5 +202,5 @@ $ gcc ../call_from_c/caller.c bin/array.o -o bin/array -m32
 - I've debug my program with gdb.
 - I used `(gdb) watch $eax`, `(gdb) b *asm_func`, `(gdb) i r`, to figure out values inside my `int_array`.
 - `int_array` has following values: `0, 2, 4, 6, 8, 10, 12, 14, 16`
-- At the end, summing all those values, we get `72` which should be printed at the end but it still doesn't.
+- At the end, summing all those values, we get `72` which should be printed at the end.
 #### Figure out why does it segfault and fix it!
