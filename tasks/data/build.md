@@ -201,6 +201,5 @@ $ gcc ../call_from_c/caller.c bin/array.o -o bin/array -m32
 
 - I've debug my program with gdb.
 - I used `(gdb) watch $eax`, `(gdb) b *asm_func`, `(gdb) i r`, to figure out values inside my `int_array`.
-- `int_array` has following values: `0, 2, 4, 6, 8, 10, 12, 14, 16`
-- At the end, summing all those values, we get `72` which should be printed at the end.
-#### Figure out why does it segfault and fix it!
+- `int_array` has following values: `0, 2, 4, 6, 8, 10, 12, 14, 16, 18`
+- At the end, summing all those values, we get `90` which should be printed at the end.

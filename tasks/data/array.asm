@@ -11,41 +11,25 @@ asm_func:
     xor ecx, ecx
     xor eax, eax
 
-    ; Populate an array 
+    ; Populate an array with logically shifted numbers by 1 to the left
 loop:
     mov al, cl
     shl al, 1
 
     mov [ebx + ecx * 4], eax
     inc cl
-    cmp cl, LEN                 ; does it count from 0 or from 1? Is it LEN or LEN-1?
+    cmp cl, LEN
     jnz loop
 
     xor eax, eax
     xor ecx, ecx
 
+    ; Sum all elements from an array into EAX
 sum:
     add eax, [ebx + ecx * 4]
     inc cl
-    cmp cl, LEN-1
+    cmp cl, LEN
     jnz sum
 
-    mov esi, int_array
-    xor ecx, ecx
-    xor eax, eax
-    xor ebx, ebx
-    xor edx, edx
-    xor edi, edi
-    mov eax, 4
-    mov ebx, 1
-    mov edx, 3
-
-;display:
-    ;mov dword ecx, esi
-    ;int 0x80
-
-    ;inc edi
-    ;cmp edi, LEN-1
-    ;jnz display
-
-    ;ret
+    ; TO-DO: Print all elements of an array to the screen
+    ret
