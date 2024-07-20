@@ -155,14 +155,14 @@
   * [✓] Write a program that manipulates an array
   ([`array.asm`](tasks/data/array.asm))
 
-* [] The Stack ([`stack/theory.md`](tasks/stack/theory.md))
+* [✓] The Stack ([`stack/stack.md`](tasks/stack/stack.md))
 
-  * [] Write a program that uses `push` and `pop`
+  * [✓] Write a program that uses `push` and `pop`
   ([`push_pop.asm`](tasks/stack/push_pop.asm))
 
-  * [] Write a program that uses the stack pointer to allocate space and
-  access elements on the stack ([`sp.asm`](tasks/stack/sp.asm) and
-  [`sp2.asm`](tasks/stack/sp2.asm))
+  * [✓] Write a program that uses the stack pointer to allocate space and
+  access elements on the stack ([`esp1.asm`](tasks/stack/esp1.asm) and
+  [`esp2.asm`](tasks/stack/esp2.asm))
 
 * [] The `call` Instruction ([`call/theory.md`](tasks/call/theory.md))
 
@@ -184,22 +184,22 @@
   * Write a library with a function containing arguments, and call it from
   another `asm` file
 
-  * Call a function from C
+  * [] Call a function from C
 
-  * Write an assembly library function that takes arguments, and call it from C
+  * [] Write an assembly library function that takes arguments, and call it from C
 
-  * Write an assembly program that calls a C function
+  * [] Write an assembly program that calls a C function
 
   * [] Write an assembly program that calls a C library function
   ([`malloc.asm`](tasks/extern/malloc.asm))
 
 * Using the Heap
 
-  * Use C's `malloc` and `free` to allocate and free memory dynamically
+  * [] Use C's `malloc` and `free` to allocate and free memory dynamically
 
 * Special `mov` instructions
 
-  * Sign and Zero Extend `mov` and "size casting" directive
+  * [] Sign and Zero Extend `mov` and "size casting" directive
 
   * Conditional `mov`
 
@@ -211,14 +211,18 @@
   * [] Write a program that does proper signed divisions with sign extensions
   ([`sx.asm`](tasks/arith2/sx.asm))
 
-* Manipulating Strings
+* [] Manipulating Strings
 
-* Floating point arithmetic
+* [] Floating point arithmetic
 
-* NASM local labels
+* [] NASM local labels
 
 ### Challenges
 
-* Write a function that receives an integer and prints it
+* [] Write a function that receives an integer and prints it
 
-* Write a function that receives an integer and returns a string with it
+* [] Write a function that receives an integer and returns a string with it
+
+* [] Write a bootloader
+
+* [] Write a function that reverses any string it gets
