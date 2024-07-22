@@ -4,17 +4,17 @@
 
 - Stack can be thought of as a pile of dishes.
 - You put the dish on top of the pile, and you take a dish from top of the pile.
-- In computing, this is how stack functions basically, stack is __LIFO__ structure.
-- You __push__ the value on top of the stack, and you __pop__ most recently added value from the top.
+- In computing, this is how stack functions basically, stack is a __LIFO__ structure.
+- You __push__ the value on top of the stack, and you __pop__ the most recently added value from the top.
 - It's purpose is to store temporary data such as function variables and parameters.
 
 ## Stack is a region in memory
 
 - Stack is a region in memory that starts at some address and __grows DOWNWARDS__ toward lower addresses.
 - So the top of the stack is actually the __last memory address that the stack occupies__.
-- __ESP__ is special register that always points to the __top__ of the stack.
+- __ESP__ (Extended Stack Pointer) is special register that always points to the __top__ of the stack.
 
-## push and pop operations in assembly
+## `push` and `pop` operations in assembly
 
 - To add a new value on top of the stack from `EAX` register:
 
@@ -30,6 +30,7 @@ push eax
 ```
 
 - So it decrements the `ESP` by 4 bytes (word) and writes value from `EAX` to that memory location.
+
 ![stack1](scrs/stack1.png)
 
 - Pushing `0xdeadbeef` to the stack:
@@ -59,7 +60,7 @@ pop eax
 
 ```asm
 mov eax, [esp + 4]
-mov ax, [esp + 4]       ; if the value was word
+mov ax, [esp + 4]       ; if the value was word, you use AX
 ```
 
 ## Stack frame
