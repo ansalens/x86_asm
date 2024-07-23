@@ -3,7 +3,7 @@ section .text
 global asm_func
 
 asm_func:
-    ; reserve a space for local variables on stack (4 * words = 16)
+    ; reserve a space for local variables on stack (4 * word = 16)
     sub esp, 16
 
     mov dword [esp], 1              ; x = 1

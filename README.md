@@ -43,17 +43,17 @@
 
 * [✓] Make a [`hello world`](tasks/helloworld/hello.asm) program
 
-* [✓] Call assembly functions from C ([`tasks/call_from_c/Calling_from_c.md`](tasks/call_from_c/Calling_from_c.md))
+* [✓] Call assembly functions from C ([`tasks/calling_from_c/Calling_from_c.md`](tasks/calling_from_c/Calling_from_c.md))
 
   * [✓] Write an assembly program with a callable function that returns a
-  32-bit integer ([`ret_int.asm`](tasks/call_from_c/ret_int.asm))
+  32-bit integer ([`ret_int.asm`](tasks/calling_from_c/ret_int.asm))
 
   * [✓] Write a small C program that calls this assembly function and displays
   the result in decimal, hexadecimal and binary formats 
-  ([`caller.c`](tasks/call_from_c/caller.c))
+  ([`caller.c`](tasks/calling_from_c/caller.c))
 
   * [✓] Write a program with a function that returns a negative number
-  ([`ret_neg.asm`](tasks/call_from_c/ret_neg_int.asm))
+  ([`ret_neg.asm`](tasks/calling_from_c/ret_neg_int.asm))
 
 * Registers ([`registers`](tasks/registers))
 
@@ -164,12 +164,12 @@
   access elements on the stack ([`esp1.asm`](tasks/stack/esp1.asm) and
   [`esp2.asm`](tasks/stack/esp2.asm))
 
-* [] The `call` Instruction ([`call/theory.md`](tasks/call/theory.md))
+* [✓] The `call` Instruction ([`call/call.md`](tasks/call/call.md))
 
-  * [] Write a program that uses `call` ([`call.asm`](tasks/call/call.asm))
+  * [✓] Write a program that uses `call` ([`call.asm`](tasks/call/call.asm))
 
-  * [] Write a program that `call`s a `print` function/subroutine
-  ([`print_func.asm`](tasks/call/print_func.asm))
+  * [✓] Write a program that `call`s a `print` function/subroutine
+  ([`print.asm`](tasks/call/print.asm))
 
 * Calling External Functions
 

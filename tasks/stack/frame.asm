@@ -44,8 +44,8 @@ foobar:
 
 
 	mov	eax, DWORD PTR -16[ebp]
-	imul	eax, DWORD PTR -12[ebp]     ; multiply xx with yy
-	imul	eax, DWORD PTR -8[ebp]      ; multiply the previous result with zz
+	imul eax, DWORD PTR -12[ebp]        ; multiply xx with yy
+	imul eax, DWORD PTR -8[ebp]         ; multiply the previous result with zz
 	mov	edx, eax
 	mov	eax, DWORD PTR -4[ebp]
 	add	eax, edx                        ; add sum with the previous result and return it
