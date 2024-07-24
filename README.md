@@ -203,13 +203,16 @@
 
   * Conditional `mov`
 
-* [] Arithmetic 2
+* [✓] Division Arithmetics ([`tasks/arithmetics2/division.md`](tasks/arithmetic2/division.md))
 
-  * [] Write a program with division operations
-  ([`idiv.asm`](tasks/arith2/idiv.asm))
+  * [✓] Write a program with `div` instruction
+  ([`div.asm`](tasks/arithmetic2/div.asm))
  
-  * [] Write a program that does proper signed divisions with sign extensions
-  ([`sx.asm`](tasks/arith2/sx.asm))
+  * [✓] Write a program that uses `idiv` instruction to perform signed division
+  ([`idiv.asm`](tasks/arithmetic2/idiv.asm))
+
+  * [✓] Write a program that does proper signed division with negative divisor
+  ([`idiv2.asm`](tasks/arithmetic2/idiv2.asm))
 
 * [] Manipulating Strings
 
