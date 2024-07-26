@@ -171,7 +171,7 @@
   * [✓] Write a program that `call`s a `print` function/subroutine
   ([`print.asm`](tasks/call/print.asm))
 
-* [] Calling External Functions
+* [] Calling External Functions ([`extern/external.md`](tasks/extern/external.md))
 
   * [✓] Write a program divided in two files using `extern`/`global`
   ([`uselib.asm`](tasks/extern/uselib.asm) and
