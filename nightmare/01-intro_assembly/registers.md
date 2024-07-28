@@ -14,7 +14,7 @@
 8. ESP - stack pointer
 9. EIP - instruction pointer
 
-- More about ![registers](../../tasks/registers/registers.md)
+- More about ![registers](../../tasks/registers/x86general.md)
 
 ## Program Counter & Instruction Pointer & Instruction Counter
 
