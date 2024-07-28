@@ -361,10 +361,27 @@ p[2] = 0xad
 p[3] = 0xde
 ```
 
-### Stack, Heap, Data, BSS
+### Stack, Heap, Data, BSS segments
 
 - Virtual address space allows the program to treat __the entire available memory in ordered fashion (from highest to lowest address).__
 - In reality it's all stored randomly on RAM.
+- `.text` segment is stored at the beginning of the address space, far from the heap and stack to prevent them from overflowing into it.
+- It's also shared in memory, so single copy is available for text editors, gcc...
+- `.data` segment contains initialized __global__ variables and __static__ variables.
+- This segment has RO area and RW area. RO is where literal constants dwell.
+- `.bss` segment contains all __global__ variables and __static__ variables that are uninitialized in source code (in reality they are initialized to 0).
+- `.stack` segment contains program's stack, and the stack frame contains at minimum the return address (if the function has no variables).
+- Each call to a function reserves a space on the stack for it's variables (new stack frame), that is how recursive functions work.
+- `.heap` segment contains dynamically allocated memory and is managed with functions `malloc`, `realloc` and `free`.
+- Heap area is shared by all shared libraries and dynamically loaded modules.
+- Use the `size` command to measure the size of `.text`, `.bss` and `.data` segments of a program:
+
+```sh
+$ size bin/hello
+   text    data     bss     dec     hex filename
+   1508     592       8    2108     83c bin/hello
+```
+
 - More about virtual memory, program segments is already done in ![linux_memory](../../../tasks/data/linux_memory.md).
 - Key thing is to remember that __program's data along with it's code__ is stored in memory __together__!
 - Look the following output of `mem_layout.c` and see for yourself:
@@ -381,6 +398,14 @@ $ ./bin/mem_layout
 (text) foo = 0x08049196
 ```
 
+
+
 - Notice that in order for variable to be in `.BSS` segment, it has to be __unitialized__ and __declared as a static variable__!
 - For reference try removing `static` in front of `bss_int` and see that it becomes part of the stack like all other function variables.
 - Also notice in program's output that each subsequent address is lower from the previous, which is expected.
+
+---
+
+Sources:
+1. https://github.com/hoppersroppers/nightmare/blob/master/modules/00-intro/unit_01.md
+2. https://www.geeksforgeeks.org/memory-layout-of-c-program/
