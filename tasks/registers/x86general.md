@@ -30,7 +30,7 @@ Get some background info on stack and heap, some instructions and some registers
 - General purpose: __EAX, EBX, ECX, EDX, ESI, EDI__
 - Special purpose: __EBP, ESP, EIP__
 
-![x86registers](../../res/scr/registers.png)
+![x86registers](scrs/registers.png)
 
 - x86 registers are backwards compatible with 16 bit registers.
 - That is why we can access __16 bit__ parts of our registers, so to access the 16 bit part of __EAX__ you will type __AX__, for EBX you type BX...
