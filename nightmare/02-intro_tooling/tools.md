@@ -370,7 +370,7 @@ WARN: Relocs has not been applied. Please use `-e bin.relocs.apply=true` or `-e 
 └───────────────────────────────────────────┘
 ```
 
-- Step through instructions line by line with `s` or step out with `S` (doesn't go into functions).
+- Step through instructions line by line with step into `s` or step over with `S` (doesn't go into functions).
 
 ---
 

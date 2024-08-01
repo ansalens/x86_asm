@@ -39,7 +39,7 @@ PLT1: jmp *name1@GOTPCREL(%rip)
 
 ## Hardware and software breakpoints
 
-- Hardware breakpoint is a feature of CPU and is limited resource.
+- Hardware breakpoint is a feature of the CPU and is limited resource.
 - On AMD64 there are 4 registers which can hold the address of an instruction at which the program execution needs to stop.
 - Software breakpoint is inserted assembly instruction, thus it's unlimited resource.
 - That assembly instruction tends to vary between architectures but on x86 that's `int 0x3`.
@@ -66,7 +66,7 @@ Trace/breakpoint trap (core dumped)
 - This is how `ltrace` works:
 1. Attaches to a running program with `ptrace`
 2. Locates the PLT in the tracee
-3. Uses `ptrace` with `PTRACE_POKETEXT` to insert breakpoints (via `int 0x3`) in PLT trampolines for each library function call.
+3. Uses `ptrace` with `PTRACE_POKETEXT` to insert breakpoints (`int 0x3`) in PLT trampolines for each library function call.
 4. Resumes execution of tracee
 
 - Then when a program makes a call to a library function:

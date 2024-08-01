@@ -33,7 +33,6 @@ $ file tools.md
 tools.md: Unicode text, UTF-8 text
 $ file /dev/null
 /dev/null: character special (1/3)
-Display all 203 possibilities? (y or n)
 ```
 
 - This command identifies file type through 3 different tests.

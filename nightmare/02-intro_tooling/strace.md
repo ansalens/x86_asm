@@ -74,7 +74,7 @@ wake_up_state(child, __TASK_TRACED);
 
 ## `_TIF_WORK_SYSCALL_ENTRY`
 
-- `_TIF_WORK_SYSCALL_ENTRY` is another flag that is being checked in the previously mentioned assembly.
+- `_TIF_WORK_SYSCALL_ENTRY` is another flag that is being checked in the above mentioned assembly.
 - If it is set, execution moves to `tracesys`.
 
 ```c
