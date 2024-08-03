@@ -2,7 +2,7 @@
 
 ## crackme01e.64
 
-- Running `file` on the binary we can see it's just standard ELF64 binary file:
+- Running `file` on the binary we can see it's just standard ELF64 bit binary file:
 
 ```sh
 noobuntu@noobuntu-VirtualBox:~/crackmes$ file ./crackme01e.64
@@ -469,14 +469,14 @@ No, drowssap is not correct.
 - So first letter got incremented by `0x01`, second with `0x03`, third with `0x00`....
 - So `drowssap` becomes `euoxwufs`
 
-- Well it looks like i'm wrong:
+- Well it looks like I'm wrong:
 
 ```sh
 noobuntu@noobuntu-VirtualBox:~/crackmes$ ./crackme03e.64 euoxwufs
 No, euoxwufs is not correct.
 ```
 
-- Because it's little endian, you should be taking values from `string2` going backwards:
+- Because it's little endian, you should be taking values from `string2` from right to the left.
 - __Big Endian__:
 - Old letters: `0x64, 0x72, 0x6f, 0x77, 0x73, 0x73, 0x61, 0x70`
 - Increments: `0x01, 0x03, 0x00, 0x01, 0x04, 0x02, 0x05, 0x03`
@@ -489,7 +489,7 @@ No, euoxwufs is not correct.
 - New letters: `0x67, 0x77, 0x71, 0x7b, 0x74, 0x73, 0x64, 0x71`
 - New string: `gwq{tsdq`
 
-- So in little endian `drowssap` turns to `gwq{tsdq`. But that's aslo incorrect!
+- So in little endian `drowssap` turns to `gwq{tsdq`. But that's also incorrect!
 
 ### Dynamic analysis 
 
@@ -503,7 +503,7 @@ Reading symbols from crackme03e.64...
 (No debugging symbols found in crackme03e.64)
 ```
 
-- To my surprise `rsi` gets loaded with string `password`.
+- To my surprise `rax` gets loaded with string `password`.
 - `CL` gets value `0x73` which is 's'.
 
 ```sh
@@ -585,11 +585,11 @@ No, arg is not correct.
 - First if statement checks if we reached the end of our input string.
 - If we did reach the end, condition is false and we fail.
 - However if we haven't reached the end, it goes into a do-while loop.
-- It loop through our given string and adds each non-zero byte to `ECX`.
+- It loops through our given string and adds each non-zero byte to `ECX`.
 - At the end of each iteration it checks if it reached NULL byte.
 - When it reaches the end, do-while loop breaks and next if statement is checked.
 - This if statement checks two things:
-1. If legth of given string is __exactly__ 32 characters long.
+1. If length of given string is __exactly__ 32 characters long.
 2. If `ECX` at the end holds decimal value `3542`.
 
 - If those checks are true, we get success string printed out.
