@@ -4,7 +4,10 @@
 sudo apt update && sudo apt upgrade -y
 
 # install cmd tools
-sudo apt install curl vim
+sudo apt install -y curl neovim ltrace git tmux xclip
+
+# install tpm for tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # install java and ghidra
 sudo apt install openjdk-17-jdk
@@ -14,6 +17,9 @@ sudo unzip ghidra.zip -d /opt
 # install pwntools
 sudo apt install python3-pip
 python3 -m pip install --upgrade pwntools
+
+# install radare2
+cd ~/.local/; git clone https://github.com/radareorg/radare2 && ./radare2/sys/install.sh
 
 # install gdb-gef
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"

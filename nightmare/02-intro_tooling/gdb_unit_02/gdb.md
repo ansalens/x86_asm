@@ -1,13 +1,13 @@
 # Tracing a Program with gdb
 
-- A lot of this is already done in: [fundamentals.md](../../notes/debugging/fundamentals.md) and in [gdbstack.md](../../notes/stack_debug/gdbstack.md)
-- Compiling with debug symbols (with `-g` flag) makes line by line stepping possible.
+- A lot of this is already done in: [fundamentals.md](../../../notes/debugging/fundamentals.md) and in [gdbstack.md](../../../notes/stack_debug/gdbstack.md)
+- Compiling with debug symbols (with `-g` flag) makes line by line stepping possible (`step` and `next`).
 
 ## Source code line-by-line debugging with `gdb`
 
 - `break` or `b` *<linenum|function|\*address>* - set a breakpoint on line number, function or at the memory address.
-- `run` or `r` *<ARGS>* - run the program with arguments.
-- `continue` or `c` *<count>* - continue the program until next breakpoint *count* times.
+- `run` or `r` *\<ARGS\>* - run the program with arguments.
+- `continue` or `c` *\<count\>* - continue the program until next breakpoint *count* times.
 - `next` or `n` - execute next line and step __over__ the functions.
 - `step` or `s` - execute next line and step __into__ the functions.
 - `finish` - finish the execution of current function or complete stack frame.
@@ -41,8 +41,8 @@ $1 = 0x5
 ```
 
 - Notice that `x` can be used in many different ways: `x[/Nuf]`
-- Where `N` is the number of `u` unit size to be printed.
-- `u` can be:
+- Where `N` is the number of `u` units to be printed.
+- `u` is unit and it can be:
 1. `b` - byte
 2. `h` - half word
 3. `w` - word

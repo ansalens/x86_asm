@@ -42,7 +42,7 @@ Usage: <key>
 
 - From here we can already solve the challenge by trying `AAAA-Z10N-42-OK` as the license key:
 
-```
+```sh
 $ ./license_1 AAAA-Z10N-42-OK
 Checking License: AAAA-Z10N-42-OK
 Access Granted!
