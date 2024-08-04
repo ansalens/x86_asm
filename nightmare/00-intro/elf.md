@@ -1,15 +1,14 @@
 # Understanding ELF, the Executable and Linkable Format
 
-- __ELF (Executable and Linkable Format) file__.
-- ELF object files contains:
-    1. ELF header
-    2. Section header and other sections
-    3. Program header and other program sections
-    4. Object code
-    5. Debugging information
+- __ELF object file contains__:
+1. ELF header
+2. Section header and other sections
+3. Program header and other program sections
+4. Object code
+5. Debugging information
 
 
-## ELF header
+## Reading ELF header
 
 - Read ELF header of any file:
 
@@ -20,9 +19,9 @@ $ readelf -h prog
 ## ELF section header
 
 - These sections are well-known already, `.text, .bss, .data, .debug, .shstrtab...`
-- `.shstrtab` contains string constants.
-- `.debug` contains debugging information.
-- All variable and function names go into `.symtab` (symbol table).
+- `.shstrtab` __contains string constants.__
+- `.debug` __contains debugging information.__
+- All __variable and function names go into `.symtab`__ (symbol table).
 
 - Show all sections in a program:
 
@@ -37,14 +36,30 @@ $ readelf -s prog
 ```
 
 
-### Task
+#### Task
 
-> This will dump all the code that is present in our study.c example. Try experimenting with objdump, hd and readelf commands to analyse each section of the ELF file. Modify the program, compile it and see how different information in the section changes. [ ]
+> This will dump all the code that is present in our study.c example. Try experimenting with objdump, hd and readelf commands to analyse each section of the ELF file. Modify the program, compile it and see how different information in the section changes. `[✓]`
+
+```sh
+$ objdump --section-headers prog
+$ diff section1 section2
+32c32
+<  13 .text         0000013a  0000000000001040  0000000000001040  00001040  2**4
+---
+>  13 .text         00000140  0000000000001040  0000000000001040  00001040  2**4
+34c34
+<  14 .fini         0000000d  000000000000117c  000000000000117c  0000117c  2**2
+---
+>  14 .fini         0000000d  0000000000001180  0000000000001180  00001180  2**2
+```
+
+- Size of `.text` section changed, and start address of `.fini` section has changed when modifying the program.
+- Running `readelf -S` on both `prog` and `progv2` and comparing the output says something similar as above `objdump` output.
 
 # How does all this fit into bigger picture?
 
-- Linker knows how to put all these ELF sections in final ELF file by using __linker descriptor file__.
-- This descriptor file contains all information about the memory present on the PC and their size.
+- Linker knows how to put all these ELF sections in the final ELF file by using __linker descriptor file__.
+- This descriptor file contains all __information about the memory present on the PC and their size.__
 - Here's simplified example of linker descriptor file:
 
 ```
@@ -67,13 +82,13 @@ SECTIONS
 .bss : { *(.bss) }
 }
 ```
-- It tells that there are two types of memory present, FLASH and RAM.
+- There are two types of memory present, flash and RAM.
 - It puts all executable code at the address `0x00000`
 - It puts all data (`.data` and `.bss`) starting at `0xA0`
 
 ## ELF Program header
 
-- The ELF program header tells which segments will be used at run-time.
+- The ELF program header tells __which *segments* will be used at run-time.__
 - See the program header information with:
 
 ```sh
@@ -84,8 +99,8 @@ $ readelf -l prog
 
 ## Linker
 
-- Is responsible for creating final ELF file.
-- It combines all sections from other object files into one final ELF file.
+- Is responsible for creating __final ELF file.__
+- __It combines all sections from other object files into one final ELF file.__
 - It uses linker descriptor table, resolves all symbols.
 
 ## Program execution

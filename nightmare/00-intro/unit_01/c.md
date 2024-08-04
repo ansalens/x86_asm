@@ -59,7 +59,7 @@ Hello world!
 
 - Passing `-v` to `gcc` shows us that there are more things happening in the background.
 - `collect2` is just another name for `ld` or GNU linker.
-- There are also present other 64 bit object files that all come together to form one final executable, our program.
+- There are also present other 64 bit object files that all come together to form one final executable, that is our program.
 
 ## Breaking down compilation even further
 
@@ -76,7 +76,7 @@ world.c:(.text+0xf): undefined reference to `puts'
 
 - You come against two problems:
 1. Linker doesn't know where `_start` entry is in the program
-2. Linker doesn't know what printf and puts are
+2. Linker doesn't know what `printf` and `puts` are
 
 - To immediately solve second problem you add `-lc` to the `gcc`, which will add the C library.
 - Now to solve first problem with the help of output from `gcc -v` command above we may do the following:
@@ -152,7 +152,7 @@ function gcc32() {
 
 ## Library functions vs system calls
 
-- System call (syscall) is a mechanism by which a programmer can access some feature of an operating system.
+- System call (syscall) is a __mechanism by which a programmer can access some feature of an operating system.__
 - These features which are available only through syscalls are:
 1. Input/output: reading and writing from devices, network, peripherals
 2. Memory management: maintaining memory for programs, virtual memory...
@@ -219,7 +219,7 @@ exit_group(0)                           = ?
 - Pointer is a variable that contains a memory address of another variable.
 - In other words it's just a variable that contains a number.
 - `int *p` declares integer pointer.
-- `*p` dereferences, follows the pointer to the memory address referenced by p.
+- `*p` uses dereference operation, it follows the pointer to the memory address referenced by p.
 - `&p` returns the address of variable `p` in memory.
 
 - Look at `reference.c` for some pointer action.
@@ -268,9 +268,9 @@ p = 0xffffd078, &p = 0xffffd074, *p = 30
 ### Array Values and Pointers are the same thing!
 
 - *Fact:* An array value is the same as a pointer.
-- An array is adjacent memory block that holds a sequence of similar data.
-- An array itself references the memory address of the first index of that array (also called base address).
-- Thus, an array is actually just a pointer.
+- __An array is adjacent memory block that holds a sequence of similar data.__
+- An array itself references the __memory address of the first index of that array (also called base address).__
+- Thus, __an array is actually just a pointer.__
 - But even though array and pointers are __memory references__, they are __not declared the same way__.
 - Meaning that, an array must reference data it holds in memory, but pointer can reference any address in memory including an array.
 
@@ -305,7 +305,7 @@ array+4=0xffe59af4, *(array+4) = 1337
 
 ### Pointer arithmetic
 
-- Look closely to the previous output, and you can see that each increment in memory addresses is 4.
+- Look closely at the previous output, and you can see that each increment in memory is 4.
 - That's because integer data type is 4 bytes wide.
 - Computer automatically increments each address it is referencing by the size of the data type that is stored in that array.
 - Look at the output of `pointer_arithmetic.c`:

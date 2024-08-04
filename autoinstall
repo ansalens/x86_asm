@@ -10,7 +10,7 @@ sudo apt install -y curl neovim ltrace git tmux xclip
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # install java and ghidra
-sudo apt install openjdk-17-jdk
+sudo apt install openjdk-17-jdk -y
 cd ~/Downloads/ && wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.1.2_build/ghidra_11.1.2_PUBLIC_20240709.zip -O ghidra.zip
 sudo unzip ghidra.zip -d /opt
 

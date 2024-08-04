@@ -1,6 +1,6 @@
 #  Compiling a C Program: Behind the Scenes
 
-- Compilation turns our source code into machine code which can be executed by our machine.
+- Compilation turns our source code into __machine code__ which can be __executed__ by our machine.
 - This is the process of compiling a C program:
 
 ![compile](scrs/compilation.png)
@@ -25,8 +25,8 @@ $ gcc -E prog.c -o prog.i
 
 ## Compiling
 
-- Next step is compiling `prog.i` which we got from preprocessing step and producing assembly equivalent `prog.s`.
-- This is a step where in-line assembly is processed.
+- Next step is compiling `prog.i` which we got from preprocessing step and producing __assembly equivalent `prog.s`__.
+- This is a step where __in-line assembly__ is processed.
 
 - Use `gcc` to generate only assembly equivalent code:
 
@@ -36,20 +36,28 @@ $ gcc -S prog.c -fverbose-asm -o prog.s
 
 ## Assembling
 
-- This step takes `prog.s` and turns it into object file `prog.o` which will contain machine code.
-- No external functions are resolved yet (such as printf).
+- This step takes `prog.s` and turns it into __object file__ `prog.o` which will contain __machine code__.
+- __No external functions (such as printf) are resolved yet__.
 - This is first step in generating __ELF__ file.
+- Use `gcc` to preprocess, compile and assemble but don't link:
+
+```sh
+gcc -c prog.c -o prog.o
+```
 
 
 ## Linking
 
 - Final step in compilation process.
-- It knows where every function is and resolves them accordingly (so functions like printf can be called).
-- It also adds some extra code which is needed for starting and ending our program (size of object file increases).
-
+- Linker knows __where every function is__ and __resolves__ them (meaning functions like printf can be called).
+- It also adds some extra code which is needed for __starting and ending our program__.
+- Because it adds some extra code, size of final binary increases.
 - __All these steps are done automatically via `gcc`.__
 
 
 ---
 
-Source: https://www.geeksforgeeks.org/compiling-a-c-program-behind-the-scenes/
+#### Sources 
+
+1. https://www.geeksforgeeks.org/compiling-a-c-program-behind-the-scenes/
+2. https://stackoverflow.com/questions/8527743/running-gccs-steps-manually-compiling-assembling-linking
