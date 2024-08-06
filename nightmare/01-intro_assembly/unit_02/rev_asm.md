@@ -171,8 +171,8 @@ esp,ebp->|  saved ebp  |   ebp->|  saved ebp  |
 - `main` and `printhello` functions have `__x86.get_pc_thunk.ax` and `__x86.get_pc_thunk.bx` respectively.
 - These two functions load the address of the next instruction into lower `AX` and `BX` portions respectively.
 - Also after both functions the `add` instruction clears out lower `BH/BL` and `AH/AL` portions of `EBX` and `EAX` registers.
-- These functions handle position independent compilation, but here they have no real purpose.
-- That's because we are compiling our program with `-m32 -no-pie` flags, however `gcc` still adds them.
+- __These functions handle position independent compilation, but here they have no real purpose.__
+- That's because we are compiling our program with `-m32 -no-pie` flags, however `gcc` still adds those functions.
 - However, here's how `__x86.get_pc_thunk.bx` works in `printhello`:
 
 ```asm
@@ -238,13 +238,13 @@ pop ebp
 ```
 
 - Stack is almost restored to what it used to be prior to the function call.
-- The last thing to do is to pop off the return value and set `eip` to correct instruction.
+- The last thing to do is to pop off the return address and set `eip` to correct instruction.
 - This is where `ret` shines, it accomplishes both of these things with:
 
 ```asm
 pop eip
 ```
-- It pops the return value and sets it into `eip`.
+- It pops the return address and sets it into `eip`.
 - Visually:
 
 ```

@@ -13,4 +13,6 @@
 
 ---
 
-Source: https://github.com/hoppersroppers/nightmare/blob/master/modules/01-intro_assembly/readme.md
+#### Sources
+
+1. https://github.com/hoppersroppers/nightmare/blob/master/modules/01-intro_assembly/readme.md

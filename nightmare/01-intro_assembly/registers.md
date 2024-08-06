@@ -1,7 +1,7 @@
 # Registers
 
-- Registers are fastest way of passing around data, faster than the CPU cache memory.
-- 32 bit architecture has 8 registers, 64 bits has 16 registers.
+- Registers are the __fastest__ way of passing around data, __faster than the CPU cache memory.__
+- x86 has 8 registers, x86_64 has 16 registers.
 - Here are most notable ones:
 
 1. EAX - multipurpose, often used for returning data
@@ -19,7 +19,7 @@
 ## Program Counter & Instruction Pointer & Instruction Counter
 
 - All these are the same thing.
-- *It's a special purpose register which holds the memory address that is currently being executed.*
+- *It's a special purpose register that holds the memory address that is currently being executed.*
 - Processors fetch instructions from memory sequentially, but control flow and functions change that.
 
 
@@ -51,6 +51,7 @@
 
 ---
 
-Sources: 
+#### Sources
+
 1. https://github.com/hoppersroppers/nightmare/blob/master/modules/01-intro_assembly/assembly/registers.md
 2. https://www.geeksforgeeks.org/different-classes-of-cpu-registers/

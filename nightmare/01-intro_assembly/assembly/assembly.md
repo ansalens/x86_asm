@@ -16,19 +16,14 @@ rip: Instruction Pointer, points to the instruction to be executed
 General Purpose Registers
 These can be used for a variety of different things.
 rax: for returning a value from a function
-rbx
+rbx: base register
 rcx: fourth argument
 rdi: first argument (destination for data copies)
 rsi: second argument (source for data copies)
 rdx: third argument
 r8: fifth argument
 r9: sixth argument
-r10
-r11
-r12
-r13
-r14
-r15
+r10-r15: storing temporary data and performing operations on them.
 ```
 
 - And their sizes:

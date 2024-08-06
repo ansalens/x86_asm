@@ -2,7 +2,7 @@
 
 ## The Microarchitecture
 
-- Microarchitecture is all digital logic that allows an instruction set to be executed.
+- __Microarchitecture__ is all __digital logic__ that allows an instruction set to be executed.
 - When you combine logic gates with an ALU, CU, registers,... you get a __processor__.
 - In any processor following can be found:
 1. An ALU
@@ -17,7 +17,7 @@
 
 ## Processor State Flag Register
 
-- EFLAGS (x86), RFLAGS (x86-64), and CPSR (Current Program Status Register) are three different names for the same thing.
+- EFLAGS (x86), RFLAGS (x86-64), and CPSR (Current Program Status Register) are three different names for the __same thing.__
 - This is already done in [EFLAGS](../../tasks/flags/control_flow.md)
 - But here's a nice layout picture:
 
