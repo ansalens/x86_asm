@@ -38,7 +38,7 @@
 
 ---
 
-#### Source
+#### Sources
 
 1. https://github.com/hoppersroppers/nightmare/blob/master/modules/03-beginner_re/methodology/triage.md
 2. https://github.com/hoppersroppers/nightmare/blob/master/modules/03-beginner_re/methodology/hybrid.md

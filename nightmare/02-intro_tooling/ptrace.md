@@ -14,13 +14,12 @@
 - `procfs` allows some processes direct access to program's memory.
 - `/proc` is also used for debugging.
 - In Linux, processes can call __`prctl`__ syscall to prevent other processes from using `ptrace` on them.
+    - `prctl` syscall is used by programs for __setting various limits and control flags on itself.__
     - OpenSSH uses this mechanism to prevent ssh session hijacking.
 - Some distros, like Ubuntu use kernel which ships with a feature that prevents processes from attaching to arbitrary process.
 
 
 ---
 
-Sources:
+#### Sources
 1. https://en.wikipedia.org/wiki/Ptrace
-
-

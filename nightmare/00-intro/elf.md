@@ -111,4 +111,5 @@ $ readelf -l prog
 
 ---
 
-Source: https://www.opensourceforu.com/2020/02/understanding-elf-the-executable-and-linkable-format/
+#### Source
+1. https://www.opensourceforu.com/2020/02/understanding-elf-the-executable-and-linkable-format/

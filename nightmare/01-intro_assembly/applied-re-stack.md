@@ -190,7 +190,7 @@ call printf
 
 -----
 
-#### Source
+#### Sources
 
 1. https://revers.engineering/applied-re-the-stack/
 2. https://www.tutorialspoint.com/assembly_programming/assembly_registers.htm

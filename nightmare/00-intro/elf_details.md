@@ -206,7 +206,7 @@ Section Headers:
 
 -----
 
-#### Resource
+#### Sources
 
 1. https://www.youtube.com/watch?v=nC1U1LJQL8o
 2. https://refspecs.linuxbase.org/elf/gabi4+/ch4.sheader.html

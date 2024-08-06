@@ -406,6 +406,7 @@ $ ./bin/mem_layout
 
 ---
 
-Sources:
+#### Sources:
+
 1. https://github.com/hoppersroppers/nightmare/blob/master/modules/00-intro/unit_01.md
 2. https://www.geeksforgeeks.org/memory-layout-of-c-program/

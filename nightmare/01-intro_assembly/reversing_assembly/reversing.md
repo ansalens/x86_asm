@@ -141,4 +141,6 @@ $ ./bin/loop
 
 ---
 
-Source: https://github.com/hoppersroppers/nightmare/tree/master/modules/01-intro_assembly/reversing_assembly
+#### Source
+
+1. https://github.com/hoppersroppers/nightmare/tree/master/modules/01-intro_assembly/reversing_assembly

@@ -431,8 +431,8 @@ No, passwordH is not correct.
 
 ![string1](scrs/string.png)
 
-- It get's represented as a string `drowssap`.
-- With `0x103000104020503` we have less luck, as it's just junk characters.
+- ~~It get's represented as a string `drowssap`.~~
+- With `0x103000104020503` we have less luck, as it's just ~~junk characters.~~
 - At this point it might be easier to just look at how ghidra disassembled `check_pw` and figure out things from there.
 
 ![funcdisass](scrs/funcdis.png)
@@ -441,7 +441,7 @@ No, passwordH is not correct.
 - This means that our `userInput` variable has to be the same as contents of register `CL`.
 - Because at the beginning of a function, `rax` is set to zero, register `CL` holds first byte of `string1`.
 - So `CL` holds letter `d`.
-- __So far, we know correct input needs to be 8 characters long and it needs to start with `d`.__
+- ~~So far, we know correct input needs to be 8 characters long and it needs to start with `d`.~~
 - Going back to decompiled window, we see that second if will break the while loop only if `string1` has reached the end.
 - If it doesn't break the loop `lVar1` gets incremented.
 - Third if checks if we reached the end of our `userInput` string. If we did, return 1.
@@ -461,7 +461,7 @@ No, drowssap is not correct.
 00101199  38 0c 07           CMP          byte ptr [userInput + RAX*0x1], CL
 ```
 
-- Remember that `string2` has `0x103000104020503`, well this data isn't junk at all.
+- Remember that `string2` has `0x103000104020503`, well this data __isn't junk at all.__
 - It moves first byte from `string2` which is `0x01` and zero extends it into `ecx`.
 - Then it adds first byte from `string1` which is `d` into `CL`.
 - But because of the first move, this `d` get's actually converted into `e` (because `0x64 + 0x01` is `0x65` which is `e`).
@@ -503,7 +503,7 @@ Reading symbols from crackme03e.64...
 (No debugging symbols found in crackme03e.64)
 ```
 
-- To my surprise `rax` gets loaded with string `password`.
+- __To my surprise `rax` gets loaded with string `password`.__
 - `CL` gets value `0x73` which is 's'.
 
 ```sh
@@ -540,8 +540,8 @@ $cs: 0x33 $ss: 0x2b $ds: 0x00 $es: 0x00 $fs: 0x00 $gs: 0x00
    0x5555555551f7 <main+0036>      mov    rbx, QWORD PTR [rsi+0x8]
 ```
 
-- Now I get it, ghidra displayed `password` as `drowssap` respecting little endian.
-- To my mistake, I've only read the `string2` from right to the left and not `string1`.
+- __Now I get it, ghidra displayed `password` as `drowssap` respecting little endian.__
+- To my mistake, I've __only__ read the `string2` from right to the left and not `string1`.
 - Let's try to convert manually again:
 
 - Old letters: `0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64`
