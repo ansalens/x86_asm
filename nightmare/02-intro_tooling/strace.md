@@ -7,17 +7,17 @@
 
 ## `ptrace` and syscalls
 
-- __Tracer__ = the program that traces syscalls of other program.
-- __Tracee__ = the program that is being traced.
+- __Tracer__ = the program that __traces__ syscalls of other program.
+- __Tracee__ = the program that is being __traced.__
 
 
 - Tracer uses `PTRACE_ATTACH` flag (when calling `ptrace`) and supplies process ID of a tracee.
 - It then calls `ptrace` again but this time with `PTRACE_SYSCALL` flag and PID.
-- Tracee runs without stopping until it enters a syscall and is stopped by the kernel.
+- __Tracee runs without stopping until it enters a syscall and is stopped by the kernel.__
 - For the tracer, the tracee appears to be `SIGTRAP`-ed.
-- At this point the tracer can inspect the arguments to a syscall.
-- The tracer can call `ptrace` again with `PTRACE_SYSCALL` which resumes the tracee, but gets it stopped again when the syscall is completed.
-- Here, the tracer can inspect return values and more stuff.
+- At this point the __tracer can inspect the arguments to a syscall.__
+- The tracer can call `ptrace` again with `PTRACE_SYSCALL` which __resumes the tracee__, but gets it __stopped again when the syscall is completed.__
+- Here, the tracer can inspect __return values and more stuff.__
 
 ## `PTRACE_ATTACH`
 
@@ -32,13 +32,11 @@ if (request == PTRACE_ATTACH || request == PTRACE_SEIZE)
 ### `ptrace_attach`
 
 - This function ensures couple of things (and more):
-1. Ensures that the process that it will attach to is not a kernel thread
-2. Ensures that the process that it will attach to is not a thread of a current process
-3. Does some security checks
+1. Ensures that the process that it will attach to is __not a kernel thread__.
+2. Ensures that the process that it will attach to is __not a thread of a current process__.
+3. Does some __security checks (checks for permissions)__.
 
 - Flag `PT_PTRACED` is set.
-
-
 
 - It check if process is ready for `ptrace` commands with `ptrace_check_attach`.
 - It does couple of more things depending on CPU architecture.
@@ -60,7 +58,7 @@ if (request == PTRACE_ATTACH || request == PTRACE_SEIZE)
 ### `ptrace_resume`
 
 - Sets `TIF_SYSCALL_TRACE` flag.
-- Tracee is resumed until it enters a syscall.
+- Tracee is __resumed until it enters a syscall.__
 
 ```c
 wake_up_state(child, __TASK_TRACED);
@@ -85,7 +83,7 @@ wake_up_state(child, __TASK_TRACED);
 ```
 
 - Which is just a collection of other flags, including the familiar `_TIF_SYSCALL_TRACE`
-- This is done for every syscall that is called.
+- __This is done for every syscall that is called.__
 
 ## `ptrace_report_syscall`
 
@@ -103,9 +101,9 @@ ptrace_notify(SIGTRAP | ((ptrace & PT_TRACESYSGOOD) ? 0x80 : 0));
 
 ### `syscall_trace_leave`
 
-- Now when syscall is finished, the tracee needs to be stopped again when it returns a value.
-- Ignoring the function call chain (for brevity), it calls `ptrace_report_syscall` which notifies the tracer.
-- As the syscall is completed, the tracer can now display any information regarding the syscall (such as return value).
+- Now when syscall is __finished__, the tracee needs to be __stopped again when it returns a value.__
+- Not including the function call chain (for brevity), it calls `ptrace_report_syscall` which __notifies the tracer.__
+- __As the syscall is completed, the tracer can now display any information regarding the syscall (such as return value).__
 
 
 #### Source

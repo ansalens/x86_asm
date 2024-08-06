@@ -63,23 +63,25 @@ You rock!
 [Inferior 1 (process 4362) exited normally]
 ```
 
-- Let's try to change a value stored at `0x80482d0` (puts call).
+- Let's try to change a value stored at `0x400490` (`printf` call).
+- *You can only change values of an address if the program is running*.
+- *And you can also do all of these things in both gdb and gdb-gef*.
 
 ```sh
-gef➤  x/g 0x80482d0
-warning: Unable to display strings with size 'g', using 'b' instead.
-0x80482d0 <puts@plt>:	"\377%\274\226\004\bh"
-gef➤  set *0x80482d0 = 0xfacade
-gef➤  x/g 0x80482d0
-warning: Unable to display strings with size 'g', using 'b' instead.
-0x80482d0 <puts@plt>:	"\336\312", <incomplete sequence \372>
+(gdb) set *0x400490 = 0xfacade
+(gdb) x 0x400490
+0x400490 <printf@plt>:  0x0168002000facade
+(gdb) c
+Continuing.
+
+Program received signal SIGSEGV, Segmentation fault.
 ```
 
 - Now jump directly to `0x80482d0`:
 
 ```sh
-gef➤  j *0x80482d0
-Continuing at 0x80482d0.
+(gdb) j *0x400490
+Continuing at 0x400490.
 
 Program received signal SIGSEGV, Segmentation fault.
 ```
