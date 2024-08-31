@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# get hex bytes string
+bytes=$(readelf -x .text $1 | grep "0x080" | tr -s " " | cut -d " " -f 3,4,5,6  | tr "\n" " " | sed "s/ //g" | sed "s/\.//g")
+# transform it to correct shellcode format
+echo $bytes | python3 -c "import sys; hex=sys.stdin.read().strip(); print(''.join('\\\\x%s%s'%(hex[i*2],hex[i*2+1]) for i in range(int(len(hex)/2))))"

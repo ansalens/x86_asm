@@ -1,0 +1,11 @@
+int main() {
+    char code[] = 
+        "\x6a\x00\x68\x00\xa0\x04\x08\xb8\x0b\x00\x00\x00"
+        "\xbb\x00\xa0\x04\x08\x89\xe1\xba\x00\x00\x00\x00"
+        "\xcd\x80\xb8\x01\x00\x00\x00\x31\xdb\xcd\x80";
+
+    /* now cast this char pointer to function pointer and try to call it */
+    ((void(*)(void)) code)();
+
+    return 0;
+}

