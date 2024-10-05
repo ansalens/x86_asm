@@ -612,3 +612,17 @@ ssssssssssssssssssssssssssssss..
 noobuntu@noobuntu-VirtualBox:~/crackmes$ ./crackme04e.64 ssssssssssssssssssssssssssssss..
 Yes, ssssssssssssssssssssssssssssss.. is correct!
 ```
+
+## crackme05.64
+
+- Lets run this ELF64 binary:
+
+```sh
+noobuntu@noobuntu-VirtualBox:~/crackmes$ file crackme05.64
+crackme05.64: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=df82a275ca7c36e51bba56838e156911d234978f, for GNU/Linux 3.2.0, not stripped
+noobuntu@noobuntu-VirtualBox:~/crackmes$ ./crackme05.64
+Need exactly one argument.
+noobuntu@noobuntu-VirtualBox:~/crackmes$ ./crackme05.64 abcd
+No, abcd is not correct.
+```
+
